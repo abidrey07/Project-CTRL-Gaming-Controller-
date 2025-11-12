@@ -1,17 +1,15 @@
 //
-// Created by Abid Rey Magsambol on 10/16/25.
+// Created by Abid Rey Magsambol on 11/12/25.
 //
 
-#ifndef FINALPROJECT_CONTROLLER_H
-#define FINALPROJECT_CONTROLLER_H
-#include <vector>
-
+#ifndef PROJECT_CTRL_GAMING_CONTROLLER_CONTROLLER_H
+#define PROJECT_CTRL_GAMING_CONTROLLER_CONTROLLER_H
 #include "button.h"
 #include "joystick.h"
 
 class Controller {
 private:
-    std::vector<Button> buttons;
+    Button buttons[13];
     Joystick leftJoystick;
     Joystick rightJoystick;
     bool isRunning;
@@ -26,4 +24,5 @@ public:
     void translateUserInputToCommand() const; //TODO: figureout how to translate controller commands to pc using XInput
 };
 
-#endif //FINALPROJECT_CONTROLLER_H
+
+#endif //PROJECT_CTRL_GAMING_CONTROLLER_CONTROLLER_H

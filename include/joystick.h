@@ -1,9 +1,9 @@
 //
-// Created by Abid Rey Magsambol on 10/16/25.
+// Created by Abid Rey Magsambol on 11/12/25.
 //
 
-#ifndef FINALPROJECT_JOYSTICK_H
-#define FINALPROJECT_JOYSTICK_H
+#ifndef PROJECT_CTRL_GAMING_CONTROLLER_JOYSTICK_H
+#define PROJECT_CTRL_GAMING_CONTROLLER_JOYSTICK_H
 
 class Joystick {
 private:
@@ -19,4 +19,4 @@ public:
     ~Joystick();
 };
 
-#endif //FINALPROJECT_JOYSTICK_H
+#endif //PROJECT_CTRL_GAMING_CONTROLLER_JOYSTICK_H

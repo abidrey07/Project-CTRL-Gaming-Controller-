@@ -8,7 +8,4 @@ include_directories(include)
 #source files
 set(src/main.cpp)
 add_executable(ProjectCTRL src/main.cpp
-        include/controller.h
-        include/button.h
-        include/joystick.h
 )
