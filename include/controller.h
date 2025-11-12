@@ -12,10 +12,10 @@ private:
     Button buttons[13];
     Joystick leftJoystick;
     Joystick rightJoystick;
-    bool isRunning;
+    bool isRunning = false;
 public:
     Controller(); //intialize controller, initialize all button and joysticks in src files
-    void run(); //while running, loop for userinput
+    void initialize() const;
     void getUserInput() const; //wait for user input. send it over to translate
     void callCommand() const;
     //gets translation from translateUserInputToCommand, calls buttonFunction if button is pressed, calls move() if joystick
@@ -23,6 +23,8 @@ public:
     ~Controller();
     void translateUserInputToCommand() const; //TODO: figureout how to translate controller commands to pc using XInput
 };
+
+
 
 
 #endif //PROJECT_CTRL_GAMING_CONTROLLER_CONTROLLER_H

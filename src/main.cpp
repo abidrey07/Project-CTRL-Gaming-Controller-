@@ -4,18 +4,13 @@
 #include "joystick.h"
 #include "../ArduinoXInput/src/XInput.h"
 void setup() {
-    XInput.setAutoSend(false); //set commands so that it is manually sent to computer, reduces latency
-    XInput.setJoystickRange(0, 1023);
-    XInput.begin(); //starts back n forth between controller & computer
-for (int i = 0; i <= 16; i++) { //loop to initialize all 16 pins on pcb
-    if (i == 11 || i == 12 || i == 13) {
-        continue; //skip
-    }
-    pinMode(i, INPUT_PULLUP); //sets pin to always on. when button is pressed, pin will be off and will be registered as command
-}
+    Controller controller;
+    controller.initialize();
 }
 
 void loop() {
+// base implementation to be transferred appropriately to classes
+
     //left trigger - 0 trigger value range from 0 to 255
     XInput.setTrigger(TRIGGER_LEFT, digitalRead(0) * -255 + 255);
     //left button - 1
@@ -26,7 +21,7 @@ void loop() {
     XInput.setDpad(!digitalRead(3),!digitalRead(5),!digitalRead(4), !digitalRead(6));
     //right trigger - 7
     XInput.setTrigger(TRIGGER_RIGHT, digitalRead(7) * -255 + 255);
-    //rigth button - 8
+    //right button - 8
     XInput.setButton(BUTTON_RB, !digitalRead(8));
     //b button - 9
     XInput.setButton(BUTTON_B, !digitalRead(9));
@@ -38,7 +33,6 @@ void loop() {
     XInput.setButton(BUTTON_START, !digitalRead(15));
     //x button - 16
     XInput.setButton(BUTTON_X, !digitalRead(16));
-
     // a2 a3 left joystick
     XInput.setJoystick(JOY_LEFT, analogRead(A3),analogRead(A2));
     //a0 a1 right joystick
