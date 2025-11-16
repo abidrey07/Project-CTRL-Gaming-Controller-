@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 #include directory
 include_directories(include)
 #source files
-set(src/main.cpp)
+set(src/main.cpp
+        src/button.cpp
+        src/controller.cpp
+        src/joystick.cpp
+)
 add_executable(ProjectCTRL src/main.cpp
 )
