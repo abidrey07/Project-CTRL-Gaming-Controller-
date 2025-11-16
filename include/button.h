@@ -12,7 +12,7 @@ protected:
     char name; //limited RAM in pro micro as compared to computer CPU
     bool isPressed = false;
 public:
-    Button(uint8_t pin, const char name) : name(name) {}
+    Button(uint8_t pin, char name);
     void buttonFunction() const;
     virtual bool checkIfIsPressed(); //if pressed, set to true
     ~Button() {};
@@ -23,8 +23,9 @@ public:
 class Trigger : public Button {
 private:
     double pressureValue = 0.0;
+    uint8_t analogPin;
 public:
-    Trigger(uint8_t pin, char name) : Button(pin, name) {};
+    Trigger(uint8_t pin, char name, uint8_t analogPin);
     virtual bool checkIfIsPressed() override; //extra code to take into account of trigger pressure
     virtual ~Trigger();
     double getPressure() const;

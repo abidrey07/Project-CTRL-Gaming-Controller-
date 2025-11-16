@@ -30,3 +30,28 @@ cd your_project_name
 git init
 git add .
 git commit -m "Initial project structure"
+```
+
+```markdown
+## Current Status
+
+**Implemented Features**:
+- ✅ Feature 1: Initialize controller 
+    - Utilizing XInpit library (to initialize physical firmware controller):
+        - Set autosend to false so that button commands are sent manually to computer
+        - Joysticks we have only accept values between 0 to 1023, so set values
+        - begin program to intiate loop to communicate back and forth between controller and computer
+        - intialize pins 
+
+**In Progress**:
+- ⏳ Feature 2: Read button presses to send commands to computer
+
+**Planned**:
+- Refine constructors
+- Better understand XInput library
+- 
+
+**Known Issues**:
+- [List any bugs or limitations you're aware of]
+
+```

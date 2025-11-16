@@ -9,7 +9,6 @@
 
 class Controller {
 private:
-    Button buttons[13];
     Joystick leftJoystick;
     Joystick rightJoystick;
     bool isRunning = false;

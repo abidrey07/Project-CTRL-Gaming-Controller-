@@ -23,12 +23,8 @@ bool Button::getIsPressed() const {
     return isPressed;
 }
 
-Trigger::Trigger(uint8_t pin, char name) : Button() {
-}
-
-bool Trigger::checkIfIsPressed() {
-    return !digitalRead(pin) * -255 + 255;
-}
+Trigger::Trigger(uint8_t pin, char name, uint8_t analogPin) : Button(pin, name), analogPin(analogPin){
+};
 
 Trigger::~Trigger() {
 }

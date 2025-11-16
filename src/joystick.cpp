@@ -3,10 +3,12 @@
 //
 #include "joystick.h"
 
-Joystick::Joystick() {
+Joystick::Joystick() : x(0), y(0) {
 }
 
 void Joystick::move(double x, double y) {
+    x = this->x;
+    y = this->y;
 }
 
 double Joystick::getX() const {
@@ -18,11 +20,11 @@ double Joystick::getY() const {
 }
 
 void Joystick::setX(double newX) {
-    newX = x;
+    x = newX;
 }
 
 void Joystick::setY(double newY) {
-    newY = y;
+    y = newY;
 }
 
 Joystick::~Joystick() {

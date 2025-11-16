@@ -3,11 +3,12 @@
 //
 #include "../ArduinoXInput/src/XInput.h"
 #include "controller.h"
+#include "button.h"
 
 Controller::Controller() {
 }
 
-void initialize() const {
+void Controller::initialize() const {
     XInput.setAutoSend(false); //set commands so that it is manually sent to computer, reduces latency
     XInput.setJoystickRange(0, 1023);
     XInput.begin(); //starts back n forth between controller & computer
