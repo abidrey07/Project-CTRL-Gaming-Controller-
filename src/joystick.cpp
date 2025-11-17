@@ -3,7 +3,8 @@
 //
 #include "joystick.h"
 
-Joystick::Joystick() : x(0), y(0) {
+Joystick::Joystick(uint8_t analogXPin, uint8_t analogYPin) : x(0), y(0), analogXPin(analogXPin),
+                                                             analogYPin(analogYPin) {
 }
 
 void Joystick::move(double x, double y) {

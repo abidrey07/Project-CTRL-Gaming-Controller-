@@ -9,18 +9,20 @@
 
 class Controller {
 private:
-    Joystick leftJoystick;
-    Joystick rightJoystick;
+    Joystick * leftJoystick;
+    Joystick * rightJoystick;
+    Trigger * leftTrigger;
+    Trigger * rightTrigger;
+    Button * buttons[8];
     bool isRunning = false;
 public:
     Controller(); //intialize controller, initialize all button and joysticks in src files
-    void initialize() const;
-    void getUserInput() const; //wait for user input. send it over to translate
+    void initialize();
+    void readUserUpdates() const; //wait for user input. send it over to translate
     void callCommand() const;
     //gets translation from translateUserInputToCommand, calls buttonFunction if button is pressed, calls move() if joystick
     bool getIsRunning() const;
     ~Controller();
-    void translateUserInputToCommand() const; //TODO: figureout how to translate controller commands to pc using XInput
 };
 
 

@@ -3,8 +3,10 @@
 #include "controller.h"
 #include "joystick.h"
 #include "../ArduinoXInput/src/XInput.h"
+
+Controller controller; //set up globally so that it is not deleted after setup()
+
 void setup() {
-    Controller controller;
     controller.initialize();
 }
 
@@ -37,6 +39,8 @@ void loop() {
     XInput.setJoystick(JOY_LEFT, analogRead(A3),analogRead(A2));
     //a0 a1 right joystick
     XInput.setJoystick(JOY_RIGHT, analogRead(A1),analogRead(A0));
+
+//total buttons = 8
 
     XInput.send();
 }

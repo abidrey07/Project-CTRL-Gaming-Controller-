@@ -13,22 +13,16 @@ protected:
     bool isPressed = false;
 public:
     Button(uint8_t pin, char name);
-    void buttonFunction() const;
     virtual bool checkIfIsPressed(); //if pressed, set to true
     ~Button() {};
     char getName() const;
     bool getIsPressed() const;
 };
 
-class Trigger : public Button {
-private:
-    double pressureValue = 0.0;
-    uint8_t analogPin;
+class Trigger : public Button { //triggers i have are digital buttons, not analog
 public:
-    Trigger(uint8_t pin, char name, uint8_t analogPin);
-    virtual bool checkIfIsPressed() override; //extra code to take into account of trigger pressure
+    Trigger(uint8_t pin, char name);
     virtual ~Trigger();
-    double getPressure() const;
 };
 
 #endif //PROJECT_CTRL_GAMING_CONTROLLER_BUTTON_H

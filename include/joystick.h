@@ -4,13 +4,16 @@
 
 #ifndef PROJECT_CTRL_GAMING_CONTROLLER_JOYSTICK_H
 #define PROJECT_CTRL_GAMING_CONTROLLER_JOYSTICK_H
+#include <stdint.h>
 
 class Joystick {
 private:
-    double x=0;
-    double y=0;
+    int16_t x = 0;
+    int16_t y = 0;
+    uint8_t analogXPin;
+    uint8_t analogYPin;
 public:
-    Joystick();
+    Joystick(uint8_t analogXPin, uint8_t analogYPin);
     void move(double x, double y);
     double getX() const;
     double getY() const;
