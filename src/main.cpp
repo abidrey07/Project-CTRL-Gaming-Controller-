@@ -12,6 +12,8 @@ void setup() {
 
 void loop() {
 // base implementation to be transferred appropriately to classes
+controller.readUserUpdates();
+controller.callCommand();
 
     //left trigger - 0 trigger value range from 0 to 255
     XInput.setTrigger(TRIGGER_LEFT, digitalRead(0) * -255 + 255);
