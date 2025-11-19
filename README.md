@@ -41,13 +41,21 @@ git commit -m "Initial project structure"
         - Set autosend to false so that button commands are sent manually to computer
         - Joysticks we have only accept values between 0 to 1023, so set values
         - begin program to intiate loop to communicate back and forth between controller and computer
-        - intialize pins 
+        - intialize pins
+- Feature 2: readUserInput() (pt.1 buttons)
+    - Utilizing XInput library:
+        - FIRST: created button objects for each button on the controller via intialize() function
+        - Arguments for XInput function setButton: (button being pressed [declared as enum within XInput library], state of button [true/false])
+        - Each button object has a member function that returns a boolean value of whether the button is pressed or not based on the digital read of the button.
+- ✅ Feature 3: Send input to computer
+  - Utilizing XInpit library (XInput.send())
+      - Any updates that were detected by the program from readUserInput() is officially sent to the computer when this function is called.
 
 **In Progress**:
-- ⏳ Feature 2: Read button presses to send commands to computer
+- ⏳ Feature 2 (pt. 2): Read joystick movements and send to computer
 
 **Planned**:
-- Refine constructors
+- Refine joystick + trigger constructors
 - Better understand XInput library
 - 
 

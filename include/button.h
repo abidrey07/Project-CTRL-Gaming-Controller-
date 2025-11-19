@@ -9,7 +9,7 @@
 class Button {
 protected:
     uint8_t pin; //pin on board associated with button
-    char name; //limited RAM in pro micro as compared to computer CPU
+    char name; //limited RAM in pro micro as compared to computer CPU, use char instead of string
     bool isPressed = false;
 public:
     Button(uint8_t pin, char name);

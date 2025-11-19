@@ -33,6 +33,8 @@ void Controller::initialize() {
     buttons[5] = new Button(14, 'Y'); //y button
     buttons[6] = new Button(15, 'M'); //menu button
     buttons[7] = new Button(16, 'X'); //x button
+
+    //create trigger objects
 }
 
 void Controller::readUserUpdates() const {
