@@ -3,6 +3,8 @@
 //
 #include "joystick.h"
 
+#include <Arduino.h>
+
 Joystick::Joystick(uint8_t analogXPin, uint8_t analogYPin) : x(0), y(0), analogXPin(analogXPin),
                                                              analogYPin(analogYPin) {
 }
@@ -19,6 +21,15 @@ double Joystick::getX() const {
 double Joystick::getY() const {
     return y;
 }
+
+int32_t Joystick::readAnalogX() {
+    return analogRead(analogXPin);
+}
+
+int32_t Joystick::readAnalogY() {
+    return analogRead(analogYPin);
+}
+
 
 void Joystick::setX(double newX) {
     x = newX;

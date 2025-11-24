@@ -27,6 +27,7 @@ controller.callCommand();
 
     //up dpad - 3 down - 5 left - 4 right - 6
     XInput.setDpad(!digitalRead(3),!digitalRead(5),!digitalRead(4), !digitalRead(6));
+
     //right trigger - 7
     XInput.setTrigger(TRIGGER_RIGHT, digitalRead(7) * -255 + 255);
 

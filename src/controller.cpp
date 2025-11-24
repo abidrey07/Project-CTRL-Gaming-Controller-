@@ -35,9 +35,16 @@ void Controller::initialize() {
     buttons[7] = new Button(16, 'X'); //x button
 
     //create trigger objects
+
+    //create joystick objects
+    leftJoystick = new Joystick(A3, A2);
+    rightJoystick = new Joystick(A1,A0);
+
+    //create dpad
 }
 
 void Controller::readUserUpdates() const {
+    //read buttons
     //left button - 1
     XInput.setButton(BUTTON_LB, buttons[0]->checkIfIsPressed());
     //back button - 2
@@ -54,6 +61,10 @@ void Controller::readUserUpdates() const {
     XInput.setButton(BUTTON_START, buttons[6]->checkIfIsPressed());
     //x button - 16
     XInput.setButton(BUTTON_X, buttons[7]->checkIfIsPressed());
+
+    //read joysticks
+    XInput.setJoystick(JOY_LEFT, leftJoystick->readAnalogX(), leftJoystick->readAnalogY());
+    XInput.setJoystick(JOY_RIGHT, rightJoystick->readAnalogX(), rightJoystick->readAnalogY());
 }
 
 void Controller::callCommand() const {

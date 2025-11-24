@@ -17,6 +17,8 @@ public:
     void move(double x, double y);
     double getX() const;
     double getY() const;
+    int32_t readAnalogX();
+    int32_t readAnalogY();
     void setX(double newX);
     void setY(double newY);
     ~Joystick();
