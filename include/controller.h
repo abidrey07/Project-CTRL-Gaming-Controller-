@@ -6,6 +6,7 @@
 #define PROJECT_CTRL_GAMING_CONTROLLER_CONTROLLER_H
 #include "button.h"
 #include "joystick.h"
+#include "../ArduinoXInput/src/XInput.h"
 
 class Controller {
 private:

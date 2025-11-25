@@ -2,23 +2,23 @@
 // Created by Abid Rey Magsambol on 11/12/25.
 //
 #include "joystick.h"
-
+#include "../ArduinoXInput/src/XInput.h"
 #include <Arduino.h>
 
 Joystick::Joystick(uint8_t analogXPin, uint8_t analogYPin) : x(0), y(0), analogXPin(analogXPin),
                                                              analogYPin(analogYPin) {
 }
 
-void Joystick::move(double x, double y) {
-    x = this->x;
-    y = this->y;
+void Joystick::move(int16_t x, int16_t y) {
+    this->x = x;
+    this->y = y;
 }
 
-double Joystick::getX() const {
+int16_t Joystick::getX() const {
     return x;
 }
 
-double Joystick::getY() const {
+int16_t Joystick::getY() const {
     return y;
 }
 

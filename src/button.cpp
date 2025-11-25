@@ -2,7 +2,7 @@
 // Created by Abid Rey Magsambol on 11/12/25.
 //
 #include "button.h"
-#include <XInput.h>
+#include "../ArduinoXInput/src/XInput.h"
 
 Button::Button(uint8_t associatedPin, char name) : pin(associatedPin), name(name) {
 }
@@ -28,7 +28,7 @@ Trigger::Trigger(uint8_t pin, char name) : Button(pin, name){
 }
 
 int Trigger::readTrigger() {
-    return analogRead(pin) * -255 + 255;
+    return digitalRead(pin) * -255 + 255;
 };
 
 Trigger::~Trigger() {
