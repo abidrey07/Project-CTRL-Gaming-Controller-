@@ -42,22 +42,25 @@ git commit -m "Initial project structure"
         - Joysticks we have only accept values between 0 to 1023, so set values
         - begin program to intiate loop to communicate back and forth between controller and computer
         - intialize pins
-- Feature 2: readUserInput() (pt.1 buttons)
+- ✅ Feature 2: readUserInput() 
     - Utilizing XInput library:
         - FIRST: created button objects for each button on the controller via intialize() function
         - Arguments for XInput function setButton: (button being pressed [declared as enum within XInput library], state of button [true/false])
         - Each button object has a member function that returns a boolean value of whether the button is pressed or not based on the digital read of the button.
+        - SECOND: created joystick objects for each joystick on the controller via intialize() function
+        - Arguments for XInput function setJoystick: (joystick being pressed [declared as enum within XInput library], int analogX value, int analogY value)
+        - THIRD: created trigger objects for each trigger on the controller via intialize() function
+        - Arguments for XInput function setTrigger: (trigger being pressed [declared as enum within XInput library], int digitalReadValue)
+        - FOURTH (outside of project): set up D-pad on controller to send input to computer
+        - Arguments for Dpad: (up button bool read, down arrow button bool read, left arrow button bool read, right arrow button bool read)
 - ✅ Feature 3: Send input to computer
   - Utilizing XInpit library (XInput.send())
       - Any updates that were detected by the program from readUserInput() is officially sent to the computer when this function is called.
 
 **In Progress**:
-- ⏳ Feature 2 (pt. 2): Read joystick movements and send to computer
 
 **Planned**:
-- Refine joystick + trigger constructors
-- Better understand XInput library
-- 
+- Figure out how to make controller compatible to programs outside of PlatformIO
 
 **Known Issues**:
 - [List any bugs or limitations you're aware of]
