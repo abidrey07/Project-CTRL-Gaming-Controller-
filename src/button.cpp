@@ -21,6 +21,10 @@ bool Button::getIsPressed() const {
 }
 
 Trigger::Trigger(uint8_t pin, char name) : Button(pin, name){
+}
+
+int Trigger::readTrigger() {
+    return analogRead(pin) * -255 + 255;
 };
 
 Trigger::~Trigger() {

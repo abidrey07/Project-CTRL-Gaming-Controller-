@@ -25,9 +25,9 @@ void Controller::initialize() {
         pinMode(i, INPUT_PULLUP); //sets pin to always on. when button is pressed, pin will be off and will be registered as command
     }
     //create button objects
-    buttons[0] = new Button(1, 'LB'); //left bumper
-    buttons[1] = new Button(2, 'BK'); //back
-    buttons[2] = new Button(8, 'RB'); //right bumper
+    buttons[0] = new Button(1, 'L'); //left bumper
+    buttons[1] = new Button(2, 'K'); //back
+    buttons[2] = new Button(8, 'R'); //right bumper
     buttons[3] = new Button(9, 'B'); //b button
     buttons[4] = new Button(10, 'A'); //a button
     buttons[5] = new Button(14, 'Y'); //y button
@@ -35,15 +35,25 @@ void Controller::initialize() {
     buttons[7] = new Button(16, 'X'); //x button
 
     //create trigger objects
+    leftTrigger = new Trigger(0, 'L');
+    rightTrigger = new Trigger(7, 'R');
 
     //create joystick objects
     leftJoystick = new Joystick(A3, A2);
     rightJoystick = new Joystick(A1,A0);
 
     //create dpad
+    buttons[8] = new Button(3, 'U'); //up
+    buttons[9] = new Button(5, 'D'); //down
+    buttons[10] = new Button(4, 'L'); //left
+    buttons[11] = new Button(6, 'R'); //right
 }
 
 void Controller::readUserUpdates() const {
+    //read triggers
+    XInput.setTrigger(TRIGGER_LEFT, leftTrigger->readTrigger());
+    XInput.setTrigger(TRIGGER_RIGHT, rightTrigger->readTrigger());
+
     //read buttons
     //left button - 1
     XInput.setButton(BUTTON_LB, buttons[0]->checkIfIsPressed());
@@ -65,6 +75,9 @@ void Controller::readUserUpdates() const {
     //read joysticks
     XInput.setJoystick(JOY_LEFT, leftJoystick->readAnalogX(), leftJoystick->readAnalogY());
     XInput.setJoystick(JOY_RIGHT, rightJoystick->readAnalogX(), rightJoystick->readAnalogY());
+
+    //read dpad
+    XInput.setDpad(buttons[8]->checkIfIsPressed(), buttons[9]->checkIfIsPressed(), buttons[10]->checkIfIsPressed(), buttons[11]->checkIfIsPressed());
 }
 
 void Controller::callCommand() const {

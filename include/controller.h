@@ -13,7 +13,7 @@ private:
     Joystick * rightJoystick;
     Trigger * leftTrigger;
     Trigger * rightTrigger;
-    Button * buttons[8];
+    Button * buttons[12];
     bool isRunning = false;
 public:
     Controller(); //intialize controller, initialize all button and joysticks in src files

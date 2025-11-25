@@ -13,8 +13,8 @@ protected:
     bool isPressed = false;
 public:
     Button(uint8_t pin, char name);
-    virtual bool checkIfIsPressed(); //if pressed, set to true
-    ~Button() {};
+    bool checkIfIsPressed(); //if pressed, set to true
+    virtual ~Button();
     char getName() const;
     bool getIsPressed() const;
 };
@@ -22,7 +22,8 @@ public:
 class Trigger : public Button { //triggers i have are digital buttons, not analog
 public:
     Trigger(uint8_t pin, char name);
-    virtual ~Trigger();
+    int readTrigger();
+    virtual ~Trigger() override;
 };
 
 #endif //PROJECT_CTRL_GAMING_CONTROLLER_BUTTON_H
