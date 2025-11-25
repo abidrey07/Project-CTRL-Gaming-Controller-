@@ -19,7 +19,7 @@ public:
     Controller(); //intialize controller, initialize all button and joysticks in src files
     void initialize();
     void readUserUpdates() const; //wait for user input. send it over to translate
-    void callCommand() const;
+    int callCommand();
     //gets translation from translateUserInputToCommand, calls buttonFunction if button is pressed, calls move() if joystick
     bool getIsRunning() const;
     ~Controller();

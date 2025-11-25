@@ -5,7 +5,7 @@
 #include "controller.h"
 #include "button.h"
 
-Controller::Controller() : leftJoystick(), rightJoystick() {
+Controller::Controller() : leftJoystick(), rightJoystick(), leftTrigger(), rightTrigger(), isRunning(true) {
     //set null, assign pins later
     for (int i = 0; i <= 8; i++) {
         buttons[i] = nullptr;
@@ -80,8 +80,8 @@ void Controller::readUserUpdates() const {
     XInput.setDpad(buttons[8]->checkIfIsPressed(), buttons[9]->checkIfIsPressed(), buttons[10]->checkIfIsPressed(), buttons[11]->checkIfIsPressed());
 }
 
-void Controller::callCommand() const {
-    XInput.send();
+int Controller::callCommand() {
+    return XInput.send();
 }
 
 bool Controller::getIsRunning() const {

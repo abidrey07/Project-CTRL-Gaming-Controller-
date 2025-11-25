@@ -2,7 +2,7 @@
 // Created by Abid Rey Magsambol on 11/12/25.
 //
 #include "button.h"
-#include "../ArduinoXInput/src/XInput.h"
+#include <XInput.h>
 
 Button::Button(uint8_t associatedPin, char name) : pin(associatedPin), name(name) {
 }
@@ -18,6 +18,10 @@ char Button::getName() const {
 
 bool Button::getIsPressed() const {
     return isPressed;
+}
+
+Button::~Button() {
+
 }
 
 Trigger::Trigger(uint8_t pin, char name) : Button(pin, name){
