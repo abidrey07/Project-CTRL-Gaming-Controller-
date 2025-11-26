@@ -29,9 +29,8 @@ to see how much force is being applied to the triggers. I figured that I would h
 
 
 # Test Results
-I used this website (https://www.onlinemictest.com/controller-tester/) to test my program. I connected my controller to my computer and ran the program. I pressed
-the buttons on my controller and saw that the program detected the button presses and sent them to the computer for it to handle, as seen when the controller's LEDs
-on the computer turned on.
+I used the "Upload and Monitor" feature on the PlatformIO plug-in to test my program. When I pressed the buttons on my controller, it showed the character of the button I was pressing
+(eg. when I pressed the A button, it showed "A"). This worked also for multiple button presses.
 
 ## Questions for Next Checkpoint
 
