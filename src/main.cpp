@@ -7,6 +7,7 @@
 Controller controller; //set up globally so that it is not deleted after setup()
 
 void setup() {
+    delay(3000);
     controller.initialize();
 }
 

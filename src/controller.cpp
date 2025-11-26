@@ -15,7 +15,6 @@ Controller::Controller() : leftJoystick(nullptr), rightJoystick(nullptr), leftTr
 void Controller::initialize() {
     XInput.setAutoSend(false); //set commands so that it is manually sent to computer, reduces latency
     XInput.setJoystickRange(0, 1023);
-    XInput.begin(); //starts back n forth between controller & computer
     for (int i = 0; i <= 16; i++) { //loop to initialize all 16 pins on pcb
         if (i == 11 || i == 12 || i == 13) {
             continue; //skip
@@ -45,6 +44,8 @@ void Controller::initialize() {
     buttons[9] = new Button(5, 'D'); //down
     buttons[10] = new Button(4, 'L'); //left
     buttons[11] = new Button(6, 'R'); //right
+
+    XInput.begin(); //starts back n forth between controller & computer
 }
 
 void Controller::readUserUpdates() const {
@@ -89,9 +90,14 @@ bool Controller::getIsRunning() const {
 Controller::~Controller() {
     for (int i = 0; i <= 11; i++) {
         delete buttons[i];
+        buttons[i] = nullptr;
     }
     delete leftTrigger;
+    leftTrigger = nullptr;
     delete rightTrigger;
+    rightTrigger = nullptr;
     delete leftJoystick;
+    leftJoystick = nullptr;
     delete rightJoystick;
+    rightJoystick = nullptr;
 }

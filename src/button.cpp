@@ -21,7 +21,6 @@ bool Button::getIsPressed() const {
 }
 
 Button::~Button() {
-
 }
 
 Trigger::Trigger(uint8_t pin, char name) : Button(pin, name){
