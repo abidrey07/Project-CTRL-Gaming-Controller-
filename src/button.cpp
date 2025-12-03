@@ -12,14 +12,6 @@ bool Button::checkIfIsPressed() {
     return isPressed;
 }
 
-char Button::getName() const {
-    return name;
-}
-
-bool Button::getIsPressed() const {
-    return isPressed;
-}
-
 Button::~Button() {
 }
 

@@ -37,7 +37,7 @@ git commit -m "Initial project structure"
 
 **Implemented Features**:
 - ✅ Feature 1: Initialize controller 
-    - Utilizing XInpit library (to initialize physical firmware controller):
+    - Utilizing XInput library (to initialize physical firmware controller):
         - Set autosend to false so that button commands are sent manually to computer
         - Joysticks we have only accept values between 0 to 1023, so set values
         - begin program to intiate loop to communicate back and forth between controller and computer
@@ -63,6 +63,6 @@ git commit -m "Initial project structure"
 - Figure out how to make controller compatible to programs outside of PlatformIO
 
 **Known Issues**:
-- [List any bugs or limitations you're aware of]
-
+- Controller only works within PlatformIO feature "Upload and Monitor" Controller doesn't work in real-life
+setting in which it is intended to be used as a controller used for gaming programs outside of PlatformIO.
 ```

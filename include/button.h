@@ -15,8 +15,6 @@ public:
     Button(uint8_t pin, char name);
     bool checkIfIsPressed(); //if pressed, set to true
     virtual ~Button();
-    char getName() const;
-    bool getIsPressed() const;
 };
 
 class Trigger : public Button { //triggers i have are digital buttons, not analog
